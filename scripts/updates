@@ -3,8 +3,8 @@
 UPDATES=$(checkupdates | wc -l)
 
 if [ $UPDATES == 0 ]; then
-	printf "^c#98c379^    ^c#c678dd^  "
+	printf "^c#61afef^  ^d^  "
 else
-	printf "^c#98c379^    ^d^ $UPDATES"
+	printf "^c#98c379^    ^d^ $UPDATES"
 fi
 
