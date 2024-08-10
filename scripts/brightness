@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+case $BLOCK_BUTTON in
+    1) /usr/local/bin/brightness --get ;;
+    4) /usr/local/bin/brightness --inc ;;
+    5) /usr/local/bin/brightness --dec ;;
+esac
+
+LIGHT=$(printf "%.0f\n" `light -G`)
+
+if [[ ("$LIGHT" -ge "0") && ("$LIGHT" -le "25") ]]; then
+	printf "^c#dddd00^󰃞  ^d^$LIGHT%%"
+elif [[ ("$LIGHT" -ge "25") && ("$LIGHT" -le "50") ]]; then
+	printf "^c#dd0000^󰃟  ^d^$LIGHT%%"
+elif [[ ("$LIGHT" -ge "50") && ("$LIGHT" -le "75") ]]; then
+	printf "^c#dddd00^󰃝  ^d^$LIGHT%%"
+elif [[ ("$LIGHT" -ge "75") && ("$LIGHT" -le "100") ]]; then
+	printf "^c#dddd00^󰃠  ^d^$LIGHT%%"
+fi
+

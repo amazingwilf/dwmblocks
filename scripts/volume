@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+case $BUTTON in
+    1) /usr/local/bin/volume --toggle ;;
+    4) /usr/local/bin/volume --inc ;;
+    5) /usr/local/bin/volume --dec ;;
+esac
+
+
+VOLUME=`pulsemixer --get-volume | cut -d ' ' -f1`
+ISMUTE=`pulsemixer --get-mute`
+
+if [[ "$ISMUTE" -eq "1" ]]; then
+    ICON="^c#555555^󰖁 ^d^"
+elif [[ ("$VOLUME" -eq "0")]] ; then
+    ICON="^c#c678dd^󰕿 ^d^"
+elif [[ ("$VOLUME" -ge "1") && ("$VOLUME" -le "30") ]]; then
+	ICON="^c#c678dd^ ^d^"
+elif [[ ("$VOLUME" -ge "30") && ("$VOLUME" -le "60") ]]; then
+	ICON="^c#c678dd^󰖀 ^d^"
+elif [[ ("$VOLUME" -ge "60") && ("$VOLUME" -le "100") ]]; then
+	ICON="^c#c678dd^ ^d^"
+fi
+
+if [[ "$ISMUTE" -eq "1" ]]; then
+    echo "$ICON Muted"
+else
+    echo "$ICON $VOLUME%"
+fi
+

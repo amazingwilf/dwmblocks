@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+UPDATES=$(checkupdates | wc -l)
+
+if [ $UPDATES == 0 ]; then
+	printf "^c#98c379^    ^c#c678dd^  "
+else
+	printf "^c#98c379^    ^d^ $UPDATES"
+fi
+
