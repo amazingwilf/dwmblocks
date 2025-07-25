@@ -26,8 +26,8 @@ fulldate="$dayofweek $dayofmonth$suffix of $month $year"
 
 case $BLOCK_BUTTON in
     1) notify-send "$fulldate" ;;
-    3) setsid --fork alacritty --class "calcurse,calcurse" -e calcurse ;;
+    3) setsid --fork ghostty --x11-instance-name=calcurse -e calcurse ;;
 esac
 
 
-printf "^C4^$icon^d^$(date '+%l:%M%P') "
+printf "^C4^$icon ^d^$(date '+%l:%M%P') "
