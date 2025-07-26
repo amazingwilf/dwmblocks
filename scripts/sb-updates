@@ -10,8 +10,8 @@ esac
 
 
 if [ "$updates" -eq "0" ]; then
-  printf "^C5^   ^d^ UTD"
+  printf "^C5^   UTD"
 else
-  printf "^C5^   ^d^ $updates"
+  printf "^C5^   $updates"
 fi
 

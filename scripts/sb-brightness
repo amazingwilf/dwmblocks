@@ -27,7 +27,7 @@ else
 	icon="? "
 fi
 
-echo "^C3^$icon ^d^$current%"
+echo "^C3^$icon $current%"
 
 case "$BLOCK_BUTTON" in
 	4) brightness --inc ;;

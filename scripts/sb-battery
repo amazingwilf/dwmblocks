@@ -27,7 +27,7 @@ case "$BLOCK_BUTTON" in
 esac
 
 if [ "$capacity" -gt 90 ]; then
-    echo "^C6^$displayicon^d^ Full"
+    echo "^C6^$displayicon Full"
 else
-    echo "^C6^$displayicon^d^ $capacity%"
+    echo "^C6^$displayicon $capacity%"
 fi
