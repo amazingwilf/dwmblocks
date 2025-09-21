@@ -1,7 +1,7 @@
 #!/bin/sh
 
-capacity="$(cat "/sys/class/power_supply/BAT1/capacity" 2>&1)"
-status="$(cat "/sys/class/power_supply/BAT1/status" 2>&1)"
+capacity="$(cat "/sys/class/power_supply/BAT0/capacity" 2>&1)"
+status="$(cat "/sys/class/power_supply/BAT0/status" 2>&1)"
 
 if [ "$capacity" -gt 90 ]; then
     levelicon=" "
