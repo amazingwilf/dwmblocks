@@ -3,16 +3,24 @@
 
 case "$BLOCK_BUTTON" in
     1) setsid --fork pavucontrol ;;
-    3) /usr/share/archcraft/dwm/scripts/dwm_volume --toggle ;;
-    4) /usr/share/archcraft/dwm/scripts/dwm_volume --inc ;;
-    5) /usr/share/archcraft/dwm/scripts/dwm_volume --dec ;;
+    3) volume --toggle ;;
+    4) volume --inc ;;
+    5) volume --dec ;;
 esac
-icon=""
 current=`pulsemixer --get-volume | cut -d' ' -f1`
 status=`pulsemixer --get-mute`
 
-if [[ "$status" -eq "1" ]]; then
-    echo "^c#454545^󰖁 ^d^Muted"
+if [ "$current" -gt 40 ]; then
+    icon=" "
+elif [ "$volume" -gt 15 ]; then
+    icon=" "
 else
-    echo "^c#c678dd^$icon  ^d^$current%"
+    icon=" "
+fi
+
+
+if [[ "$status" -eq "1" ]]; then
+    echo "󰖁"
+else
+    echo "$icon"
 fi

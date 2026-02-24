@@ -30,4 +30,4 @@ case $BLOCK_BUTTON in
 esac
 
 
-printf "^c#61afef^$icon ^d^$(date '+%l:%M%P') "
+printf "$(date '+%l:%M%P') "

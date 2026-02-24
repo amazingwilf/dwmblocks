@@ -4,7 +4,7 @@ icon=""
 brightness=$(light)
 current=$(printf "%.0f" $brightness)
 
-echo "^C3^$icon  ^d^$current%"
+echo "$icon"
 
 case "$BLOCK_BUTTON" in
 	4) brightness --inc ;;
