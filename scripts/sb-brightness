@@ -1,12 +1,22 @@
 #!/usr/bin/env bash
 
+source colors.txt
+
 icon=""
 brightness=$(light)
 current=$(printf "%.0f" $brightness)
 
-echo "$icon"
+if [[ ("$current" -ge "0") && ("$LIGHT" -le "25") ]]; then
+	echo "$yellow  󰃞 $current%"
+elif [[ ("$current" -ge "25") && ("$LIGHT" -le "50") ]]; then
+	echo "$yellow  󰃟 $current%"
+elif [[ ("$current" -ge "50") && ("$LIGHT" -le "75") ]]; then
+	echo "$yellow  󰃝 $current%"
+elif [[ ("$current" -ge "75") && ("$LIGHT" -le "100") ]]; then
+	echo "$yellow  󰃠 $current%"
+fi
 
 case "$BLOCK_BUTTON" in
-	4) brightness --inc ;;
-    5) brightness --dec ;;
+	4) /usr/share/archcraft/dwm/scripts/dwm_brightness --inc ;;
+    5) /usr/share/archcraft/dwm/scripts/dwm_brightness --dec ;;
 esac

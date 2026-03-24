@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+source colors.txt
+
+cpu_load=$(grep -o "^[^ ]*" /proc/loadavg)
+
+echo "$pink  $cpu_load%"
+

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+source colors.txt
 
 icon=""
 dayofweek=`date +%A`
@@ -26,8 +27,9 @@ fulldate="$dayofweek $dayofmonth$suffix of $month $year"
 
 case $BLOCK_BUTTON in
     1) notify-send "$fulldate" ;;
-    3) setsid --fork ghostty --x11-instance-name=calcurse -e calcurse ;;
+    3) setsid --fork ghostty --x11-instance-name=floaterm -e calcurse ;;
 esac
 
 
-printf "$(date '+%l:%M%P') "
+# echo "^c#61afef^  $(date '+%l:%M%p') "
+echo "$blue  $(date '+%l:%M%p') "

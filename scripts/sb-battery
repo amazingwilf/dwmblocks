@@ -1,33 +1,24 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-capacity="$(cat "/sys/class/power_supply/BAT0/capacity" 2>&1)"
-status="$(cat "/sys/class/power_supply/BAT0/status" 2>&1)"
+source colors.txt
 
-if [ "$capacity" -gt 90 ]; then
-    levelicon=" "
-elif [ "$capacity" -gt 60 ]; then
-    levelicon=" "
-elif [ "$capacity" -gt 40 ]; then
-    levelicon=" "
-elif [ "$capacity" -gt 10 ]; then
-    levelicon=" "
+BAT=$(upower -i `upower -e | grep 'BAT'` | grep 'percentage' | cut -d':' -f2 | tr -d '%,[:blank:]')
+AC=$(upower -i `upower -e | grep 'BAT'` | grep 'state' | cut -d':' -f2 | tr -d '[:blank:]')
+
+if [[ "$AC" == "charging" ]]; then
+	echo "$cyan  $BAT%"
+elif [[ "$AC" == "fully-charged" ]]; then
+	echo "$cyan  Full"
 else
-    levelicon=" "
-fi
-
-if [ `acpi -a | awk -F ':' '{printf "%s", $2}'` = "on-line" ]; then
-    displayicon=""  
-else
-    displayicon=$levelicon
-fi
-
-case "$BLOCK_BUTTON" in
-    1) notify "$(acpi -b | awk -F ': |, ' '{printf "%s\n%s\n", $2, $4}')" ;;
-    6) terminal -e "$EDITOR" "$0" ;;
-esac
-
-if [ "$capacity" -gt 90 ]; then
-    echo "$displayicon"
-else
-    echo "$displayicon"
+	if [[ ("$BAT" -ge "0") && ("$BAT" -le "20") ]]; then
+		echo "$red   $BAT%"
+	elif [[ ("$BAT" -ge "20") && ("$BAT" -le "40") ]]; then
+		echo "$red   $BAT%"
+	elif [[ ("$BAT" -ge "40") && ("$BAT" -le "60") ]]; then
+		echo "$red   $BAT%"
+	elif [[ ("$BAT" -ge "60") && ("$BAT" -le "80") ]]; then
+		echo "$red   $BAT%"
+	elif [[ ("$BAT" -ge "80") && ("$BAT" -le "100") ]]; then
+		echo "$red   $BAT%"
+	fi
 fi
