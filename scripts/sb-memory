@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source colors.txt
+source /usr/local/bin/statusbar/colors.txt
 
 
 echo "$orange  $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g) "

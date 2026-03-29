@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source colors.txt
+source /usr/local/bin/statusbar/colors.txt
 
 BAT=$(upower -i `upower -e | grep 'BAT'` | grep 'percentage' | cut -d':' -f2 | tr -d '%,[:blank:]')
 AC=$(upower -i `upower -e | grep 'BAT'` | grep 'state' | cut -d':' -f2 | tr -d '[:blank:]')

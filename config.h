@@ -20,8 +20,6 @@
 #define BLOCKS(X)             \
     X("", "/usr/local/bin/statusbar/sb-updates", 5, 1)  \
     X("", "/usr/local/bin/statusbar/sb-battery", 5, 2)  \
-    X("", "/usr/local/bin/statusbar/sb-cpu", 1, 3)  \
-    X("", "/usr/local/bin/statusbar/sb-memory", 1, 4)  \
     X("", "/usr/local/bin/statusbar/sb-volume", 1, 5)  \
     X("", "/usr/local/bin/statusbar/sb-brightness", 1, 6)  \
     X("", "/usr/local/bin/statusbar/sb-clock", 60, 7) 

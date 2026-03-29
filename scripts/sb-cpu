@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source colors.txt
+source /usr/local/bin/statusbar/colors.txt
 
 cpu_load=$(grep -o "^[^ ]*" /proc/loadavg)
 

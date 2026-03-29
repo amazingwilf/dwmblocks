@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-source colors.txt
+source /usr/local/bin/statusbar/colors.txt
 
-# updates=`checkupdates | wc -l`
-updates=$({ timeout 20 doas xbps-install -un 2>/dev/null || true; } | wc -l) # void
+updates=`checkupdates | wc -l`
+# updates=$({ timeout 20 doas xbps-install -un 2>/dev/null || true; } | wc -l) # void
 # updates=$({ timeout 20 aptitude search '~U' 2>/dev/null || true; } | wc -l)  # apt (ubuntu, debian etc)
 
 case $BLOCK_BUTTON in
-    1) setsid --fork ghostty --x11-instance-name=floaterm -e doas xbps-install -Su ;;
+    1) setsid --fork ghostty --x11-instance-name=floaterm -e doas pacman -Syu ;;
 esac
 
 
