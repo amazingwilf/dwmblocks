@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source /usr/local/bin/statusbar/colors.txt
-
 icon=""
 dayofweek=`date +%A`
 dayofmonth=`date +%e`
@@ -32,4 +30,4 @@ esac
 
 
 # echo "^c#61afef^  $(date '+%l:%M%p') "
-echo "$blue  $(date '+%l:%M%p') "
+echo "  $(date '+%l:%M%p') "

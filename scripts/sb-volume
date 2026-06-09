@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
-source /usr/local/bin/statusbar/colors.txt
-
 case "$BLOCK_BUTTON" in
     1) setsid --fork pavucontrol ;;
-    3) /usr/local/bin/dwm_volume --toggle ;;
-    4) /usr/local/bin/dwm_volume --inc ;;
-    5) /usr/local/bin/dwm_volume --dec ;;
+    3) /usr/share/archcraft/dwm/scripts/dwm_volume --toggle ;;
+    4) /usr/share/archcraft/dwm/scripts/dwm_volume --inc ;;
+    5) /usr/share/archcraft/dwm/scripts/dwm_volume --dec ;;
 esac
 current=`pulsemixer --get-volume | cut -d' ' -f1`
 status=`pulsemixer --get-mute`
@@ -21,7 +19,7 @@ fi
 
 
 if [[ "$status" -eq "1" ]]; then
-    echo "$gray3󰖁 Muted"
+    echo "󰖁 Muted"
 else
-    echo "$green$icon $current%"
+    echo "$icon  $current%"
 fi

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+ICON="  "
+echo "$ICON"$(mpc current )
+
+case "$BLOCK_BUTTON" in
+    1) mpc toggle ;;
+esac

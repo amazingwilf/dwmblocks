@@ -1,24 +1,22 @@
 #!/usr/bin/env bash
 
-source /usr/local/bin/statusbar/colors.txt
-
 BAT=$(upower -i `upower -e | grep 'BAT'` | grep 'percentage' | cut -d':' -f2 | tr -d '%,[:blank:]')
 AC=$(upower -i `upower -e | grep 'BAT'` | grep 'state' | cut -d':' -f2 | tr -d '[:blank:]')
 
 if [[ "$AC" == "charging" ]]; then
-	echo "$cyan  $BAT%"
+	echo "  $BAT%"
 elif [[ "$AC" == "fully-charged" ]]; then
-	echo "$cyan  Full"
+	echo "  Full"
 else
 	if [[ ("$BAT" -ge "0") && ("$BAT" -le "20") ]]; then
-		echo "$red   $BAT%"
+		echo "   $BAT%"
 	elif [[ ("$BAT" -ge "20") && ("$BAT" -le "40") ]]; then
-		echo "$red   $BAT%"
+		echo "   $BAT%"
 	elif [[ ("$BAT" -ge "40") && ("$BAT" -le "60") ]]; then
-		echo "$red   $BAT%"
+		echo "   $BAT%"
 	elif [[ ("$BAT" -ge "60") && ("$BAT" -le "80") ]]; then
-		echo "$red   $BAT%"
+		echo "   $BAT%"
 	elif [[ ("$BAT" -ge "80") && ("$BAT" -le "100") ]]; then
-		echo "$red   $BAT%"
+		echo "   $BAT%"
 	fi
 fi

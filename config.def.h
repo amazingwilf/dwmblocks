@@ -2,7 +2,7 @@
 #define CONFIG_H
 
 // String used to delimit block outputs in the status.
-#define DELIMITER " ∙ "
+#define DELIMITER "   "
 
 // Maximum number of Unicode characters that a block can output.
 #define MAX_BLOCK_OUTPUT_LENGTH 45
@@ -18,12 +18,11 @@
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
 #define BLOCKS(X)             \
-    X("", "/usr/local/bin/statusbar/sb-music", 1, 1)  \
-    X("", "/usr/local/bin/statusbar/sb-updates", 5, 2)  \
-    X("", "/usr/local/bin/statusbar/sb-battery", 5, 3)  \
-    X("", "/usr/local/bin/statusbar/sb-volume", 1, 4)  \
-    X("", "/usr/local/bin/statusbar/sb-brightness", 1, 5)  \
-    X("", "/usr/local/bin/statusbar/sb-clock", 60, 6) 
+    X("", "/usr/local/bin/statusbar/sb-updates", 5, 1)  \
+    X("", "/usr/local/bin/statusbar/sb-battery", 5, 2)  \
+    X("", "/usr/local/bin/statusbar/sb-volume", 1, 5)  \
+    X("", "/usr/local/bin/statusbar/sb-brightness", 1, 6)  \
+    X("", "/usr/local/bin/statusbar/sb-clock", 60, 7) 
     /*X("", "sb-music", 0, 2)   \*/
     /*X("", "sb-disk", 1800, 3) \*/
     /*X("", "sb-memory", 10, 4) \*/

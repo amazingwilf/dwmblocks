@@ -1,22 +1,20 @@
 #!/usr/bin/env bash
 
-source /usr/local/bin/statusbar/colors.txt
-
 icon=""
 brightness=$(light)
 current=$(printf "%.0f" $brightness)
 
 if [[ ("$current" -ge "0") && ("$LIGHT" -le "25") ]]; then
-	echo "$yellow  󰃞 $current%"
+	echo "  󰃞  $current%"
 elif [[ ("$current" -ge "25") && ("$LIGHT" -le "50") ]]; then
-	echo "$yellow  󰃟 $current%"
+	echo "  󰃟  $current%"
 elif [[ ("$current" -ge "50") && ("$LIGHT" -le "75") ]]; then
-	echo "$yellow  󰃝 $current%"
+	echo "  󰃝  $current%"
 elif [[ ("$current" -ge "75") && ("$LIGHT" -le "100") ]]; then
-	echo "$yellow  󰃠 $current%"
+	echo "  󰃠  $current%"
 fi
 
 case "$BLOCK_BUTTON" in
-	4) /usr/local/bin/dwm_brightness --inc ;;
-    5) /usr/local/bin/dwm_brightness --dec ;;
+	4) /usr/share/archcraft/dwm/scripts/dwm_brightness --inc ;;
+    5) /usr/share/archcraft/dwm/scripts/dwm_brightness --dec ;;
 esac
