@@ -30,4 +30,4 @@ esac
 
 
 # echo "^c#61afef^  $(date '+%l:%M%p') "
-echo "^C6^  $(date '+%l:%M%p') "
+echo "^C6^  ^d^$(date '+%l:%M%p') "

@@ -4,19 +4,19 @@ BAT=$(upower -i `upower -e | grep 'BAT'` | grep 'percentage' | cut -d':' -f2 | t
 AC=$(upower -i `upower -e | grep 'BAT'` | grep 'state' | cut -d':' -f2 | tr -d '[:blank:]')
 
 if [[ "$AC" == "charging" ]]; then
-	echo "^C2^  $BAT%"
+	echo "^C2^  ^d^$BAT%"
 elif [[ "$AC" == "fully-charged" ]]; then
-	echo "^C2^  Full"
+	echo "^C2^  ^d^Full"
 else
 	if [[ ("$BAT" -ge "0") && ("$BAT" -le "20") ]]; then
-		echo "^C2^   $BAT%"
+		echo "^C2^   ^d^$BAT%"
 	elif [[ ("$BAT" -ge "20") && ("$BAT" -le "40") ]]; then
-		echo "^C2^   $BAT%"
+		echo "^C2^   ^d^$BAT%"
 	elif [[ ("$BAT" -ge "40") && ("$BAT" -le "60") ]]; then
-		echo "^C2^   $BAT%"
+		echo "^C2^   ^d^$BAT%"
 	elif [[ ("$BAT" -ge "60") && ("$BAT" -le "80") ]]; then
-		echo "^C2^   $BAT%"
+		echo "^C2^   ^d^$BAT%"
 	elif [[ ("$BAT" -ge "80") && ("$BAT" -le "100") ]]; then
-		echo "^C2^   $BAT%"
+		echo "^C2^   ^d^$BAT%"
 	fi
 fi
