@@ -5,13 +5,13 @@ brightness=$(light)
 current=$(printf "%.0f" $brightness)
 
 if [[ ("$current" -ge "0") && ("$LIGHT" -le "25") ]]; then
-	echo "  󰃞  $current%"
+	echo "^C3^  󰃞  $current%"
 elif [[ ("$current" -ge "25") && ("$LIGHT" -le "50") ]]; then
-	echo "  󰃟  $current%"
+	echo "^C3^  󰃟  $current%"
 elif [[ ("$current" -ge "50") && ("$LIGHT" -le "75") ]]; then
-	echo "  󰃝  $current%"
+	echo "^C3^  󰃝  $current%"
 elif [[ ("$current" -ge "75") && ("$LIGHT" -le "100") ]]; then
-	echo "  󰃠  $current%"
+	echo "^C3^  󰃠  $current%"
 fi
 
 case "$BLOCK_BUTTON" in

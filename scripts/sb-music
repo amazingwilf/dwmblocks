@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ICON="  "
-echo "$ICON"$(mpc current )
+echo "^C4^$ICON"$(mpc current )
 
 case "$BLOCK_BUTTON" in
     1) mpc toggle ;;
