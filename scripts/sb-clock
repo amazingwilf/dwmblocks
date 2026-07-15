@@ -25,9 +25,8 @@ fulldate="$dayofweek $dayofmonth$suffix of $month $year"
 
 case $BLOCK_BUTTON in
     1) notify-send "$fulldate" ;;
-    3) setsid --fork ghostty --x11-instance-name=floaterm -e calcurse ;;
 esac
 
 
 # echo "^c#61afef^  $(date '+%l:%M%p') "
-echo "^C6^  ^d^$(date '+%l:%M%p') "
+echo "^C4^   ^d^$(date '+%l:%M %P') "

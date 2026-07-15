@@ -18,11 +18,9 @@
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
 #define BLOCKS(X)             \
-    X("", "/usr/local/bin/statusbar/sb-music", 1, 1)  \
-    X("", "/usr/local/bin/statusbar/sb-updates", 5, 2)  \
-    X("", "/usr/local/bin/statusbar/sb-battery", 5, 3)  \
-    X("", "/usr/local/bin/statusbar/sb-volume", 1, 4)  \
-    X("", "/usr/local/bin/statusbar/sb-brightness", 1, 5)  \
+    X("", "/usr/local/bin/statusbar/sb-battery", 5, 3) \
+    X("", "/usr/local/bin/statusbar/sb-volume", 2, 4) \
+    X("", "/usr/local/bin/statusbar/sb-brightness", 2, 5) \
     X("", "/usr/local/bin/statusbar/sb-clock", 60, 6) 
     /*X("", "sb-music", 0, 2)   \*/
     /*X("", "sb-disk", 1800, 3) \*/

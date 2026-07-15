@@ -19,7 +19,7 @@ fi
 
 
 if [[ "$status" -eq "1" ]]; then
-    echo "^C8^󰖁 Muted"
+    echo "^C8^󰖁^d^ Muted"
 else
-    echo "^C4^$icon  $current%"
+    echo "^C2^$icon ^d^ $current%"
 fi
